@@ -1,0 +1,37 @@
+.botonNuevo{
+ background: #2C71B7;
+ border: none ;
+ color: white;
+}
+
+
+.botonNuevo:hover{
+ background: #094DA0;
+ border: none;
+ color: white;
+}
+
+
+.botonEditar{
+ background: white;
+ border: 1px solid #3876C9;
+ color: black;
+}
+
+.botonEditar:hover{
+ background: #3876C9;
+ border: none;
+ color: white;
+}
+
+.botonBorrar{
+ background: white;
+ border: 1px solid #EC2222;
+ color: black;
+}
+
+.botonBorrar:hover{
+ background: #EC2222;
+ border: none;
+ color: white;
+}

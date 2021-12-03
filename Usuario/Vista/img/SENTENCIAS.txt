@@ -1,0 +1,38 @@
+******************PUNTO 1********************************
+
+1) SELECT `ESTU_CONSECUTIVO_FK`,`PUNT_LENGUAJE` AS puntaje_lenguaje FROM `puntaje` ORDER BY `PUNT_LENGUAJE` DESC LIMIT 1;
+2) SELECT `ESTU_CONSECUTIVO_FK`,`PUNT_MATEMATICAS` AS PUNT_MATEMATICAS FROM `puntaje` ORDER BY `PUNT_MATEMATICAS` DESC LIMIT 1;
+3) SELECT `ESTU_CONSECUTIVO_FK`,`PUNT_C_SOCIALES` AS PUNT_C_SOCIALES FROM `puntaje` ORDER BY `PUNT_C_SOCIALES` DESC LIMIT 1;
+4) SELECT `ESTU_CONSECUTIVO_FK`,`PUNT_FILOSOFIA` AS PUNT_FILOSOFIA FROM `puntaje` ORDER BY `PUNT_FILOSOFIA` DESC LIMIT 1;
+5) SELECT `ESTU_CONSECUTIVO_FK`,`PUNT_BIOLOGIA` AS PUNT_BIOLOGIA FROM `puntaje` ORDER BY `PUNT_BIOLOGIA` DESC LIMIT 1;
+6) SELECT `ESTU_CONSECUTIVO_FK`,`PUNT_QUIMICA` AS PUNT_QUIMICA FROM `puntaje` ORDER BY `PUNT_QUIMICA` DESC LIMIT 1;
+7) SELECT `ESTU_CONSECUTIVO_FK`,`PUNT_FISICA` AS PUNT_FISICA FROM `puntaje` ORDER BY `PUNT_FISICA` DESC LIMIT 1;
+8) SELECT `ESTU_CONSECUTIVO_FK`,`PUNT_INGLES` AS PUNT_INGLES FROM `puntaje` ORDER BY `PUNT_INGLES` DESC LIMIT 1;
+
+*************** PUNTO 2**********************************
+9) Select c.`COLE_COD_NOMMBRE` AS Nombre_Colegio, AVG(p.`PUNT_LENGUAJE`+p.`PUNT_MATEMATICAS`+p.`PUNT_MATEMATICAS`+p.`PUNT_C_SOCIALES`+p.`PUNT_FILOSOFIA`+p.`PUNT_BIOLOGIA`+p.`PUNT_QUIMICA`+p.`PUNT_FISICA`+p.`PUNT_INGLES`)AS Promedio from Colegio c INNER JOIN puntaje p on c.`COLE_COD_ICFES` =p. `COLE_COD_ICFES_FK` GROUP BY c.`COLE_COD_NOMMBRE` Order by Promedio DESC LIMIT 1;
+
+********************* PUNTO 3 **********************************
+
+10) Select count(`DESEMP_INGLES`) as Cantidad from puntaje Where `DESEMP_INGLES` = 'B+';
+
+********************* PUNTO 4 **********************************
+
+11) Select c.`COLE_COD_NOMMBRE` AS Nombre_Colegio, AVG(p.`PUNT_INGLES`)
+AS Promedio, c.`COLE_BILINGUE` as "No Bilingue" from Colegio c
+ INNER JOIN puntaje p on c.`COLE_COD_ICFES` =p. `COLE_COD_ICFES_FK` where c.`COLE_BILINGUE`=0
+ GROUP BY c.`COLE_COD_NOMMBRE` , c.`COLE_BILINGUE` Order by Promedio DESC LIMIT 12;
+
+********************* PUNTO 5 **********************************
+12) 
+SELECT m.`ESTU_RESIDE_MCPIO`AS MUNICIPIO ,COUNT(u.`DESEMP_INGLES`)AS CANTIDAD_P FROM `persona` p 
+INNER JOIN municipio m on m.`ESTU_COD_RESIDE_MCPIO` = p.`ESTU_COD_RESIDE_MCPIO_FK` 
+INNER JOIN puntaje u on u.`ESTU_CONSECUTIVO_FK` = p.`ESTU_CONSECUTIVO` 
+WHERE u.`DESEMP_INGLES` = "B+" GROUP BY m.`ESTU_RESIDE_MCPIO` ORDER by CANTIDAD_P DESC;
+
+********************* PUNTO 6 **********************************
+13) 
+SELECT p. `PUNT_MATEMATICAS`as Puntaje_Matematicas, e. `Estu_Consecutivo`as Estudiante, e.`ESTU_GENERO` as Genero FROM `puntaje` P INNER JOIN persona e on e.`ESTU_CONSECUTIVO` = p.`ESTU_CONSECUTIVO_FK` WHERE e.`ESTU_GENERO` = 'M' ORDER BY Puntaje_Matematicas DESC LIMIT 6;
+
+14)
+SELECT p. `PUNT_MATEMATICAS`as Puntaje_Matematicas, e. `Estu_Consecutivo`as Estudiante, e.`ESTU_GENERO` as Genero FROM `puntaje` P INNER JOIN persona e on e.`ESTU_CONSECUTIVO` = p.`ESTU_CONSECUTIVO_FK` WHERE e.`ESTU_GENERO` = 'F';

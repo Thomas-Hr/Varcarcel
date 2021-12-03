@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+
+
+@media screen and (min-width:1024px){
+    #servicios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#servicios h1{
+    text-align: center;
+    padding: 8px;
+    color:rgb(255, 255, 255);
+    margin-top: 20px;
+}
+
+#servicios {
+    background-color: white;
+    padding: 20px;
+}
+
+.caja{
+    width: 95%;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.caja h1{
+    text-align: center;
+    color: #14347C;
+    margin: 20px;
+}
+#caja1 p{
+color: #415762;
+}
+
+#caja1 li{
+width: 100%;
+max-width: 100%;
+color: #415762; 
+}
+
+#caja1 h4,li{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#caja1{
+    margin-top: 0;
+    padding: 30px;
+    border: 1px solid #d4d4cb;  
+    border-radius: 5px;
+    font-size: 18px;  
+    box-shadow: 2px 2px 2px gray;
+    text-align: center; 
+}
+#caja2 p{
+    color: #415762;
+}
+
+#caja2 li{
+    color: #415762; 
+}
+
+#caja2 h4,li{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#caja2{
+    margin-top: 0;
+padding: 20px;
+background-color: #f8f8f4;
+border: 1px solid #d4d4cb;  
+border-radius: 5px;
+font-size: 18px;  
+box-shadow: 2px 2px 5px gray;
+}
+
+#caja2 iframe{
+    height: 100%;
+    width: 90%;
+   
+}
+
+
+.input{
+
+border-bottom: 1px solid;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+    margin-bottom:10px ;
+    resize: none;
+
+}
+
+header{
+    color: white;
+    width: 95%;
+    background-color: red;
+}
+header h1{
+    color: white;
+}
+    .infocaja{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .servicio{
+        margin-top: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .caja img{
+       
+        max-width: 100%;
+    }
+
+    .caja p{
+      
+       max-width: 100%; 
+    }
+    
+    .container-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    header{
+        color: white;
+        width: 100%;
+        background-color: #5986ad;
+    }
+    .servicio h1{
+        color: white;
+    }
+    .caja ul{
+        list-style: none;
+    }
+
+
+}
+        </style>
+
+    </head>
+
+
+    <body>
+        
+
+
+        
+        <section id="servicios">
+            
+            <div class="servicio">
+                
+            
+                <article class="caja" id="caja1" >
+                    <header>
+                        <h1> Nueva consulta de: '.$nombre.'</h1>
+                    </header>
+                    <img src="PHPMailer-master/undraw_medicine_b1ol.svg" width="50%" alt="" srcset="">
+
+                </article>
+            
+                <article class="caja" id="caja2">
+
+                    <label>Informacion de: '.$nombre.'</label>
+                        <ul>
+                            <li><b>Nombre: </h5>'.$nombre.'</li>
+                            <li><b>Telefono: </h5>'.utf8_decode($telefono).'</li>
+                            <li><b>Correo: </h5>'.$correo.'</li>
+                            <li><b>Mensaje: </h5>'.$mensaje.'</li>
+                        </ul>
+
+                </article>
+            
+            </div>
+            </section>
+        
+
+        
+    </body>
+    </html>
