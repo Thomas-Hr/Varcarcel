@@ -94,7 +94,7 @@ class Usuario extends conexion {
       return $_SESSION['ES'];
     }
     public function getRL(){
-      return $_SESSION['RL'];
+      return $_SESSION['TIPO'];
     }
     
     
